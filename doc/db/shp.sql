@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 50724
  Source Host           : localhost:3306
- Source Schema         : sophia
+ Source Schema         : shp
 
  Target Server Type    : MySQL
  Target Server Version : 50724
@@ -119,7 +119,7 @@ CREATE TABLE `sys_oauth_client_details`  (
 -- Records of sys_oauth_client_details
 -- ----------------------------
 INSERT INTO `sys_oauth_client_details` VALUES ('amor-admin', NULL, 'amor-admin-secret', 'all,read,write', 'password,refresh_token', NULL, NULL, 21600, 28800, NULL, 'true');
-INSERT INTO `sys_oauth_client_details` VALUES ('sophia-admin', NULL, 'sophia-admin-secret', 'all,read,write', 'password,refresh_token,authorization_code,client_credentials', NULL, NULL, 21600, 28800, NULL, 'true');
+INSERT INTO `sys_oauth_client_details` VALUES ('shp-admin', NULL, 'shp-admin-secret', 'all,read,write', 'password,refresh_token,authorization_code,client_credentials', NULL, NULL, 21600, 28800, NULL, 'true');
 
 -- ----------------------------
 -- Table structure for sys_role
