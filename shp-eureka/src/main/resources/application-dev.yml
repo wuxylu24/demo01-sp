@@ -1,0 +1,26 @@
+server:
+  port: 8761
+spring:
+  security:
+    user:
+      name: shp
+      password: shp123
+  application:
+    name: shp-eureka
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  server:
+    enable-self-preservation: false
+  client:
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

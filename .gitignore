@@ -1,0 +1,16 @@
+/.idea/
+/shp-demo01.iml
+/shp-eureka/target/
+/shp_admin/shp_admin_api/target/
+/shp_admin/shp_admin_biz/target/
+/shp_admin/shp_admin_biz/shp_admin_biz.iml
+/shp_auth/target/
+/shp-common/shp_common_base/target/
+/shp-common/shp_common_config/target/
+/shp-common/shp_common_feign/target/
+/shp-common/shp_common_security/target/
+/shp-common/shp_common_util/target/
+/shp_gateway/target/
+/shp_zuul/target/
+/shp_zuul/shp_zuul.iml
+/shp_gateway/shp_gateway.iml
