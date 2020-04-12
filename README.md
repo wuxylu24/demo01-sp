@@ -1,38 +1,69 @@
-简单的微服务项目:应用spring boot spring cloud security auth gateway 
-简单的集成用户 api
+Eureka -- Micro Service Center
 
-角色
-先区分下OAuth 2.0 中有哪些角色:
-Client: 客户端,也就是Third-party application - 第三方应用程序
-Service：服务端,也就是服务的提供者
-User： 用户,也就是Resource Owner - 资源所有者
-User Agent：用户代理,如浏览器，下文中将其与Client合并考虑。
-Authorization Server：认证服务器,即服务提供商专门用来处理认证的服务器。
-Resource Server：资源服务器,即服务提供商存放用户生成的资源的服务器。
+Commom -- tool project
 
-客户端的授权模式
-客户端必
-须得到用户的授权（authorization grant），才能获得令牌（access token）。OAuth 2.0定义了四种授权方式。
-授权码模式（authorization code）
-简化模式（implicit）
-密码模式（resource owner password credentials）
-客户端模式（client credentials）
+Admin -- main business code project
 
-AuthorizationServer 授权服务接口介绍
-/oauth/authorize：验证接口， AuthorizationEndpoint
-/oauth/token：获取token
-/oauth/confirm_access：用户授权
-/oauth/error：认证失败
-/oauth/check_token：资源服务器用来校验token
-/oauth/token_key：jwt模式下获取公钥；位于：TokenKeyEndpoint ，通过 JwtAccessTokenConverter 访问key
+Auth -- authentication and authorization
 
-JWT – Json Web Token, 
-使用Json方式保存Web Token的协议 
+Gateway -- gateway forwarding
 
-eureka --微服务中心
-commom --工具项目
-admin --主要业务代码项目
-auth -- 认证授权
-gateway --网关转发
-zuul --资源控制
+Zuul -- resource control
 
+
+
+Simple microservice project: applying spring boot spring cloud security auth gateway
+
+Simple integrated user API
+
+role
+
+First, distinguish the roles in OAuth 2.0:
+
+Client: client, that is, third-party application
+
+Service: the server, which is the service provider
+
+User: user, that is, resource owner - resource owner
+
+User agent: a user agent, such as a browser, which will be considered in combination with the client later.
+
+Authorization server: authentication server, that is, the server used by the service provider to handle authentication.
+
+Resource server: resource server, that is, the server where the service provider stores the user generated resources.
+
+Authorization mode of client
+
+Client must
+
+The user's authorization grant is required to obtain the access token. OAuth 2.0 defines four authorization methods.
+
+Authorization code mode
+
+Simplify mode
+
+Resource owner password credentials
+
+Client credentials
+
+
+
+Authorization server authorization service interface introduction
+
+/OAuth / authorize: authentication interface, authorizationendpoint
+
+/OAuth / token: get token
+
+/OAuth / confirm_access: user authorization
+
+/OAuth / error: authentication failed
+
+/OAuth / check_token: used by resource server to verify token
+
+/OAuth / token_key: obtain the public key in JWT mode; located in: tokenkeyendpoint, access the key through jwtaccesstokenconverter
+
+
+
+JWT – Json Web Token,
+
+Protocol for saving web token in JSON mode
