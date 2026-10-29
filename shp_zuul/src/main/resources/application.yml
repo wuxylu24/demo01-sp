@@ -1,20 +1,12 @@
 spring:
   application:
     name: shp-zuul
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
 server:
   port: 8080
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: http://${eurekaUserName}:${eurekaPassWord}@localhost:8761/eureka/
-  instance:
-    prefer‐ip‐address: true
-    status-page-url-path: /actuator/info
-    health-check-url-path: /actuator/health
-eurekaUserName: shp
-eurekaPassWord: shp123
 zuul:
   host:
     connect-timeout-millis: 20000
@@ -52,8 +44,6 @@ ribbon:
   ConnectTimeout: 5000 #请求连接的超时时间
   MaxAutoRetries: 1 #对当前实例的重试次数
   MaxAutoRetriesNextServer: 2 #切换实例的重试次数
-  eureka:
-    enabled: true
 
 hystrix:
   command:

@@ -6,6 +6,9 @@ spring:
   application:
     name: shp-gateway
   cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
     gateway:
       locator:
         enabled: true
@@ -32,18 +35,6 @@ spring:
               args:
                 name: admin-hystrix
                 fallbackUri: forward:/common/fallback #设置熔断器
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: http://${eurekaUserName}:${eurekaPassWord}@localhost:8761/eureka/
-  instance:
-    prefer‐ip‐address: true
-    status-page-url-path: /actuator/info
-    health-check-url-path: /actuator/health
-eurekaUserName: shp
-eurekaPassWord: shp123
 
 hystrix:
   command:

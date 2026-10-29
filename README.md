@@ -1,4 +1,4 @@
-Eureka -- Micro Service Center
+Nacos -- Service registry (standalone server, see doc/nacos)
 
 Commom -- tool project
 

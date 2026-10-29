@@ -24,10 +24,10 @@
             <artifactId>shp_common_base</artifactId>
             <version>${sph-common.version}</version>
         </dependency>
-        <!--eureka client-->
+        <!--nacos 注册中心-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <!--zuul-->
         <dependency>
