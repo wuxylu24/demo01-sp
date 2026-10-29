@@ -1,4 +1,4 @@
-Nacos -- Service registry (standalone server, see doc/nacos)
+Nacos -- Service registry (standalone server, started by docker-compose)
 
 Commom -- tool project
 
@@ -9,6 +9,24 @@ Auth -- authentication and authorization
 Gateway -- gateway forwarding
 
 Zuul -- resource control
+
+## Docker 部署
+
+一键启动 MySQL、Redis、Nacos 以及 auth / admin / gateway / zuul 四个服务（镜像在 Docker 内用 JDK 8 + Maven 编译，无需本地构建）：
+
+```bash
+docker compose up -d --build
+```
+
+| 服务 | 地址 |
+|---|---|
+| Nacos 控制台 | http://localhost:8848/nacos |
+| shp-auth | http://localhost:8000 |
+| shp-admin | http://localhost:8001 |
+| shp-gateway | http://localhost:8002 （`/api/auth/**`、`/api/admin/**`） |
+| shp-zuul | http://localhost:8080 |
+
+MySQL 首次启动时自动导入 `doc/db/shp.sql`。单独构建某个服务镜像：`docker build --build-arg MODULE=shp_auth -t shp-auth .`
 
 
 
