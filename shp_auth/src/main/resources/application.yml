@@ -5,6 +5,10 @@ spring:
     allow-bean-definition-overriding: true
   application:
     name: shp-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url:  jdbc:mysql://localhost:3306/shp?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
@@ -55,18 +59,6 @@ mybatis-plus:
     db-config:
       logic-not-delete-value: 1
       logic-delete-value: 0
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: http://${eurekaUserName}:${eurekaPassWord}@localhost:8761/eureka/
-  instance:
-    prefer‐ip‐address: true
-    status-page-url-path: /actuator/info
-    health-check-url-path: /actuator/health
-eurekaUserName: shp
-eurekaPassWord: shp123
 
 management:
   metrics:
@@ -112,8 +104,6 @@ ribbon:
   ConnectTimeout: 5000 #请求连接的超时时间
   MaxAutoRetries: 1 #对当前实例的重试次数
   MaxAutoRetriesNextServer: 2 #切换实例的重试次数
-  eureka:
-    enabled: true
 
 hystrix:
   command:

@@ -1,6 +1,5 @@
 /.idea/
 /shp-demo01.iml
-/shp-eureka/target/
 /shp_admin/shp_admin_api/target/
 /shp_admin/shp_admin_biz/target/
 /shp_admin/shp_admin_biz/shp_admin_biz.iml
